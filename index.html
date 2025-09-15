@@ -26,19 +26,37 @@
                 <span>crown</span>
             </a>
 
-            <nav>
+            <nav class="nav-menu">
                 <ul>
                     <li><a href="">Home</a></li>
                     <li><a href="">About</a></li>
-                    <li><a href="">Gallery</a></li>
                     <li><a href="">services</a></li>
+                    <li><a href="">Gallery</a></li>
                     <li><a href="">contact</a></li>
                 </ul>
             </nav>
+
+            <!-- Hamburger Button for Mobile -->
+            <button class="hamburger" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Overlay Menu -->
+            <div class="mobile-overlay">
+                <nav class="mobile-nav-menu">
+                    <a href="#" class="nav-item ">Home</a>
+                    <a href="#" class="nav-item">About</a>
+                    <a href="#" class="nav-item">services</a>
+                    <a href="#" class="nav-item">Gallery</a>
+                    <a href="#" class="nav-item">contact</a>
+                </nav>
+            </div>
         </div>
     </header>
 
-    <!-- <div class="confetti-container">
+    <div class="confetti-container">
         <div class="confetti confetti-0"></div>
         <div class="confetti confetti-1"></div>
         <div class="confetti confetti-2"></div>
@@ -69,21 +87,48 @@
         <div class="confetti confetti-27"></div>
         <div class="confetti confetti-28"></div>
         <div class="confetti confetti-29"></div>
-    </div> -->
+    </div>
 
 
 
     <main>
         <section class="hero">
             <div class="hero-background">
-                <div class="background-slide first-background active" style="background: linear-gradient(rgb(0,0,0,0.3), rgb(0,0,0,0.5)), url('assets/imgs/16.jpg');">
+                <div class="background-slide first-background active"
+                    style="background: linear-gradient(rgb(0,0,0,0.3), rgb(0,0,0,0.5)), url('assets/imgs/16.jpg');">
                     <div class="hero-content">
-                        
+                        <h2>Crown.</h2>
+                        <h1>Elegance in <span>Motion</span></h1>
+                        <p>Experience the epitome of elegance with Crown, where every piece is a masterpiece of
+                            craftsmanship and style.</p>
                     </div>
                 </div>
-                <div class="background-slide second-background" style="background: linear-gradient(rgb(0,0,0,0.3), rgb(0,0,0,0.5)), url('assets/imgs/6.jpg');"></div>
+                <div class="background-slide second-background"
+                    style="background: linear-gradient(rgb(0,0,0,0.3), rgb(0,0,0,0.5)), url('assets/imgs/6.jpg');">
+                    <div class="hero-content">
+                        <h2>Crown.</h2>
+                        <h1>Redefining Beauty. Inspiring Style</h1>
+                        <p>
+                            Unleash your individuality with Crown, where bold design meets modern luxury, and every
+                            piece tells your unique story.
+                        </p>
+                    </div>
+                </div>
             </div>
+
+            <a href="#gallery" class="scroll-to-gallery">
+            <span>scroll to gallery</span>
+            <div class="bounce"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" class="lucide lucide-arrow-down" aria-hidden="true">
+                <path d="M12 5v14"></path>
+                <path d="m19 12-7 7-7-7"></path>
+            </svg>
+        </div>
+        </a>
         </section>
+
+        
     </main>
 
     <footer></footer>
