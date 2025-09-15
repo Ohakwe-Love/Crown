@@ -1,0 +1,622 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Manrope:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Oxygen:wght@300;400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Urbanist:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap');
+
+:root {
+    /* Core brand colors */
+    --crown-black: #150b01;
+    --crown-white: #ffffff;
+    --crown-brown: #4E342E;
+    --crown-gold: #CFAE70;
+
+    /* Supporting tones */
+    --crown-beige: #D7CCC8;
+    --crown-dark-gold: #8C6A2F;
+
+    /* Typography */
+    --font-heading: 'Playfair Display', serif;
+    --font-subheading: 'Cormorant Garamond', serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* Font sizes */
+    --fs-hero: 3rem;
+    --fs-heading: 2rem;
+    --fs-subheading: 1.25rem;
+    --fs-body: 1rem;
+    --fs-small: 0.875rem;
+
+    /* Line heights */
+    --lh-tight: 1.2;
+    --lh-normal: 1.5;
+    --lh-loose: 1.8;
+
+
+
+    /* UI helpers */
+    --bg-color: var(--crown-black);
+    --text-color: var(--crown-white);
+    --accent-color: var(--crown-gold);
+    --muted-color: var(--crown-beige);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: var(--lh-normal);
+    font-size: var(--fs-body);
+    overflow-x: hidden;
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 1.5rem;
+}
+
+
+/* header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--crown-beige);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.4rem;
+    color: var(--crown-white);
+}
+
+.logo svg {
+    width: 80px;
+    height: auto;
+}
+
+.logo svg polygon {
+    fill: var(--crown-gold);
+}
+
+.logo span {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--crown-gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header ul {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    list-style: none;
+}
+
+
+header nav ul li a {
+    color: var(--white-color);
+    text-transform: capitalize;
+    transition: color 0.3s;
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+header nav ul li a::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 4px;
+    border: 1px solid var(--crown-beige);
+    box-sizing: border-box;
+    pointer-events: none;
+    z-index: 2;
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    transition: clip-path 0s;
+}
+
+header nav ul li a:hover::before {
+    animation: border-draw 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes border-draw {
+    0% {
+        clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    }
+
+    25% {
+        clip-path: polygon(0 0, 100% 0, 0 0, 0 0);
+    }
+
+    50% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 0);
+    }
+
+    75% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    100% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+/* header end */
+
+
+/* hero */
+.hero{
+    width: 100%;
+    height: 110vh;
+    background-position: center;
+    background-size: cover;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+}
+/* Background Images */
+.hero .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero .background-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover !important;
+    background-position: center !important;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.hero .background-slide.active {
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ui-serif,Georgia,Cambria,Times New Roman,Times,serif */
+.confetti-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 15;
+    overflow: hidden;
+}
+
+.confetti {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: rgba(212, 175, 55, 0.7);
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: fall linear infinite;
+}
+
+/* Randomize confetti properties */
+
+.confetti-0 {
+    left: 98.74671669865657%;
+    width: 11.637546747015042px;
+    height: 6.458854936101118px;
+    animation-duration: 5.800693971602822s;
+    animation-delay: 1.1751004179893072s;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 30%;
+    transform: rotate(308.48336462954074deg);
+}
+
+.confetti-1 {
+    left: 90.66695387439091%;
+    width: 4.333920694563154px;
+    height: 10.300118607220146px;
+    animation-duration: 8.386129397942074s;
+    animation-delay: 4.946950435520703s;
+    background: rgba(220, 150, 150, 0.6);
+    border-radius: 50%;
+    transform: rotate(312.2757050844847deg);
+}
+
+.confetti-2 {
+    left: 9.593586365771579%;
+    width: 7.023412369670386px;
+    height: 5.442949615827463px;
+    animation-duration: 8.721275888572437s;
+    animation-delay: 4.34051829993591s;
+    background: rgba(212, 175, 55, 0.7);
+    border-radius: 30%;
+    transform: rotate(166.90046653831706deg);
+}
+
+.confetti-3 {
+    left: 5.731146660382381%;
+    width: 5.199418419581269px;
+    height: 11.161249927750166px;
+    animation-duration: 9.223524992045233s;
+    animation-delay: 1.787814736883457s;
+    background: rgba(212, 175, 55, 0.7);
+    border-radius: 30%;
+    transform: rotate(343.1578853118896deg);
+}
+
+.confetti-4 {
+    left: 72.01400346571772%;
+    width: 9.436370736577244px;
+    height: 10.60937287964534px;
+    animation-duration: 7.4197483189105355s;
+    animation-delay: 2.445293566356543s;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    transform: rotate(182.66670350401915deg);
+}
+
+.confetti-5 {
+    left: 8.036101633453384%;
+    width: 7.4054708240751115px;
+    height: 5.441965424684856px;
+    animation-duration: 9.589396510628326s;
+    animation-delay: 0.4786347513377387s;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    transform: rotate(78.608984745306deg);
+}
+
+.confetti-6 {
+    left: 8.88534433148067%;
+    width: 4.040984273289934px;
+    height: 6.6741049378602115px;
+    animation-duration: 6.843661094834937s;
+    animation-delay: 3.6325458857389528s;
+    background: rgba(212, 175, 55, 0.7);
+    border-radius: 30%;
+    transform: rotate(292.8326534457703deg);
+}
+
+.confetti-7 {
+    left: 82.88846207120326%;
+    width: 11.357308325857359px;
+    height: 9.362272816848144px;
+    animation-duration: 9.237994309557449s;
+    animation-delay: 2.2431999484403633s;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 30%;
+    transform: rotate(356.7841029039455deg);
+}
+
+.confetti-8 {
+    left: 59.25294457027924%;
+    width: 6.349302415442895px;
+    height: 7.514471698255717px;
+    animation-duration: 9.016004183263153s;
+    animation-delay: 3.8742962379677164s;
+    background: rgba(220, 150, 150, 0.6);
+    border-radius: 50%;
+    transform: rotate(124.85824262067706deg);
+}
+
+.confetti-9 {
+    left: 10.093126673463171%;
+    width: 7.075895441499752px;
+    height: 7.469260293045295px;
+    animation-duration: 8.824075941551873s;
+    animation-delay: 1.7882561480070809s;
+    background: rgba(212, 175, 55, 0.7);
+    border-radius: 30%;
+    transform: rotate(157.5622194169643deg);
+}
+
+.confetti-10 {
+    left: 17.38007583808494%;
+    width: 11.54716747241287px;
+    height: 6.199438674811201px;
+    animation-duration: 5.145566278515791s;
+    animation-delay: 4.025241469551011s;
+    background: rgba(212, 175, 55, 0.7);
+    border-radius: 50%;
+    transform: rotate(123.13756151635204deg);
+}
+
+.confetti-11 {
+    left: 89.79957569673552%;
+    width: 5.26726017517937px;
+    height: 11.570807692274755px;
+    animation-duration: 7.583747130126663s;
+    animation-delay: 4.2032805858682085s;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 30%;
+    transform: rotate(263.15734491551956deg);
+}
+
+.confetti-12 {
+    left: 29.38206963659247%;
+    width: 9.31905017095146px;
+    height: 9.976099365365025px;
+    animation-duration: 8.630312491898431s;
+    animation-delay: 0.9803470041486279s;
+    background: rgba(212, 175, 55, 0.7);
+    border-radius: 50%;
+    transform: rotate(5.373965105130001deg);
+}
+
+.confetti-13 {
+    left: 60.29768547302186%;
+    width: 10.199689268795417px;
+    height: 4.364790289009353px;
+    animation-duration: 7.652846747337363s;
+    animation-delay: 0.7253477940341729s;
+    background: rgba(212, 175, 55, 0.7);
+    border-radius: 30%;
+    transform: rotate(345.71864200567654deg);
+}
+
+.confetti-14 {
+    left: 52.592912441790716%;
+    width: 5.663534426144447px;
+    height: 11.96332292740711px;
+    animation-duration: 6.916982926905055s;
+    animation-delay: 3.6343623112936956s;
+    background: rgba(212, 175, 55, 0.7);
+    border-radius: 50%;
+    transform: rotate(147.60253087204222deg);
+}
+
+.confetti-15 {
+    left: 23.408016361670214%;
+    width: 9.995652127179579px;
+    height: 6.861768601972764px;
+    animation-duration: 8.992244694751932s;
+    animation-delay: 3.743772600670015s;
+    background: rgba(212, 175, 55, 0.7);
+    border-radius: 30%;
+    transform: rotate(280.7173522555423deg);
+}
+
+.confetti-16 {
+    left: 32.22827796546844%;
+    width: 10.086328833791933px;
+    height: 4.73145535277527px;
+    animation-duration: 8.24064578919666s;
+    animation-delay: 1.9896440751943756s;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 30%;
+    transform: rotate(309.34437800677387deg);
+}
+
+.confetti-17 {
+    left: 15.733967927761528%;
+    width: 6.7130972349085445px;
+    height: 11.63251451652336px;
+    animation-duration: 9.769916140542765s;
+    animation-delay: 2.2675654015335818s;
+    background: rgba(220, 150, 150, 0.6);
+    border-radius: 30%;
+    transform: rotate(352.04172816854947deg);
+}
+
+.confetti-18 {
+    left: 73.63592570105072%;
+    width: 8.941624495970082px;
+    height: 6.079537749876197px;
+    animation-duration: 6.253268487061023s;
+    animation-delay: 0.9557778814527346s;
+    background: rgba(212, 175, 55, 0.7);
+    border-radius: 30%;
+    transform: rotate(277.3542347147199deg);
+}
+
+.confetti-19 {
+    left: 3.4371596766014756%;
+    width: 7.315227180259977px;
+    height: 10.131565715873691px;
+    animation-duration: 7.5430996252465645s;
+    animation-delay: 3.0322503234611826s;
+    background: rgba(212, 175, 55, 0.7);
+    border-radius: 30%;
+    transform: rotate(256.0643236124773deg);
+}
+
+.confetti-20 {
+    left: 52.32566984783769%;
+    width: 7.076927167605809px;
+    height: 7.028002871927623px;
+    animation-duration: 9.553395462435617s;
+    animation-delay: 4.666426422014976s;
+    background: rgba(220, 150, 150, 0.6);
+    border-radius: 50%;
+    transform: rotate(334.2917529032442deg);
+}
+
+.confetti-21 {
+    left: 54.58457192771211%;
+    width: 11.717206541333741px;
+    height: 9.29927428387291px;
+    animation-duration: 7.551440516862678s;
+    animation-delay: 4.81395892165928s;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 30%;
+    transform: rotate(250.048461764231deg);
+}
+
+.confetti-22 {
+    left: 1.822301730208642%;
+    width: 10.505184550996086px;
+    height: 10.816744858902432px;
+    animation-duration: 5.693093038755482s;
+    animation-delay: 2.8153600764496014s;
+    background: rgba(220, 150, 150, 0.6);
+    border-radius: 30%;
+    transform: rotate(47.49449877203223deg);
+}
+
+.confetti-23 {
+    left: 75.3183839715989%;
+    width: 7.1361050803126505px;
+    height: 6.50306125199309px;
+    animation-duration: 5.742610139481988s;
+    animation-delay: 0.6881537035897045s;
+    background: rgba(220, 150, 150, 0.6);
+    border-radius: 30%;
+    transform: rotate(104.14567622590286deg);
+}
+
+.confetti-24 {
+    left: 39.41656925454989%;
+    width: 10.300665764024648px;
+    height: 7.484159238773498px;
+    animation-duration: 8.314052855826661s;
+    animation-delay: 1.4105317343974293s;
+    background: rgba(212, 175, 55, 0.7);
+    border-radius: 30%;
+    transform: rotate(289.6090091357349deg);
+}
+
+.confetti-25 {
+    left: 92.36254815244254%;
+    width: 11.138040326212677px;
+    height: 4.68117629673166px;
+    animation-duration: 9.148508994274465s;
+    animation-delay: 3.5430791713302936s;
+    background: rgba(212, 175, 55, 0.7);
+    border-radius: 50%;
+    transform: rotate(14.8127160938152deg);
+}
+
+.confetti-26 {
+    left: 63.60320218250003%;
+    width: 7.529766889898479px;
+    height: 7.921954809250194px;
+    animation-duration: 5.684487331825994s;
+    animation-delay: 2.2828281913303563s;
+    background: rgba(220, 150, 150, 0.6);
+    border-radius: 30%;
+    transform: rotate(100.16750932882573deg);
+}
+
+.confetti-27 {
+    left: 2.3284080797053575%;
+    width: 9.021399387630419px;
+    height: 10.145057089606983px;
+    animation-duration: 9.136445950153144s;
+    animation-delay: 4.189563895409789s;
+    background: rgba(212, 175, 55, 0.7);
+    border-radius: 30%;
+    transform: rotate(15.085892929484658deg);
+}
+
+.confetti-28 {
+    left: 6.243446262195073%;
+    width: 4.2696781675449165px;
+    height: 8.164608486447534px;
+    animation-duration: 8.47829893220285s;
+    animation-delay: 0.4002536162132031s;
+    background: rgba(212, 175, 55, 0.7);
+    border-radius: 30%;
+    transform: rotate(103.30640968416091deg);
+}
+
+.confetti-29 {
+    left: 82.50396249031657%;
+    width: 4.628064685890782px;
+    height: 7.9756123724584995px;
+    animation-duration: 8.686267639547946s;
+    animation-delay: 2.1521244517191604s;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 30%;
+    transform: rotate(193.25550836995959deg);
+}
+
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(100vh) rotate(523.0099234473358deg);
+        opacity: 0;
+    }
+}
+
+/* Custom pagination styles for Swiper */
+.swiper-pagination {
+    bottom: 2rem !important;
+}
+
+.swiper-pagination-bullet {
+    transition: all 0.3s ease !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .confetti {
+        width: 6px;
+        height: 6px;
+    }
+
+    .swiper-pagination {
+        bottom: 6rem !important;
+    }
+}
