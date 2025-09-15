@@ -10,6 +10,7 @@
     /* Supporting tones */
     --crown-beige: #D7CCC8;
     --crown-dark-gold: #8C6A2F;
+    --gradient: linear-gradient(90deg, var(--crown-gold), var(--crown-white), var(--crown-gold));
 
     /* Typography */
     --font-heading: 'Playfair Display', serif;
@@ -19,7 +20,7 @@
 
     /* Font sizes */
     --fs-hero: 3rem;
-    --fs-heading: 2rem;
+    --fs-heading: 2.5rem;
     --fs-subheading: 1.25rem;
     --fs-body: 1rem;
     --fs-small: 0.875rem;
@@ -76,10 +77,40 @@ h1 {
     font-size: var(--fs-heading);
 }
 
+h2 {
+    font-size: var(--fs-heading);
+    font-weight: 100;
+}
+
 .container {
     max-width: 1200px;
     margin: auto;
     padding: 0 1.5rem;
+}
+
+.section-header {
+    text-align: center;
+}
+
+.section-header h2 {
+    font-family: var(--font-cursive);
+    line-height: var(--lh-very-tight);
+    margin-bottom: 1px;
+    background: var(--gradient);
+    background-size: 200% 100%;
+    padding-top: 10px;
+    background-position: 0% 50%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.section-header p {
+    font-family: var(--font-heading);
+    text-transform: capitalize;
+    letter-spacing: 3px;
+    font-size: var(--fs-subheading);
 }
 
 
@@ -339,7 +370,7 @@ header nav ul li a:hover::before {
     font-size: 8rem;
     font-weight: 100;
     line-height: var(--lh-very-tight);
-    background: linear-gradient(90deg, var(--crown-gold), var(--crown-white), var(--crown-gold));
+    background: var(--gradient);
     background-size: 200% 100%;
     padding-top: 10px;
     background-position: 0% 50%;
@@ -347,7 +378,6 @@ header nav ul li a:hover::before {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
-    background-color: orange !important;
 }
 
 .background-slide .hero-content p {
@@ -403,44 +433,6 @@ header nav ul li a:hover::before {
     stroke: var(--crown-dark-gold) !important;
 }
 
-@media (max-width: 900px) {
-    .background-slide.first-background {
-        justify-content: center;
-        text-align: center;
-    }
-
-    .first-background .hero-content {
-        padding-right: 0;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ui-serif,Georgia,Cambria,Times New Roman,Times,serif */
 .confetti-container {
     position: absolute;
     top: 0;
@@ -826,4 +818,101 @@ header nav ul li a:hover::before {
     .swiper-pagination {
         bottom: 6rem !important;
     }
+}
+
+@media (max-width: 900px) {
+    .background-slide.first-background {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .first-background .hero-content {
+        padding-right: 0;
+    }
+}
+
+/* about */
+.about {
+    padding: 5rem 0;
+}
+
+.about .section-header h2 {
+    position: relative;
+}
+
+.about .section-header h2 span {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+}
+
+.about .section-header h2 span svg {
+    width: 20px;
+    height: auto;
+    fill: var(--crown-gold);
+}
+
+.about-row {
+    display: grid;
+    margin-top: 50px;
+    gap: 50px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.about-col.about-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-col.about-img img{
+    width: 90%;
+    border-radius: 20px;
+}
+
+.about-col.about-text h2 {
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.about-col.about-text h2::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 80px;
+    height: 2px;
+    background: var(--gradient);
+    border-radius: 3px;
+}
+
+.about-col.about-text p {
+    margin-bottom: 1.25rem;
+}
+
+@media (max-width: 900px) {
+    .about-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-col.about-img img {
+        width: 70%;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-col.about-img img {
+        width: 100%;
+        border-radius: 13px;
+    }
+    .about-col.about-text p  {
+        text-align: justify;
+    }
+}
+
+
+/* services */
+.services {
+    width: 100%;
+    padding: 5rem 0;
 }

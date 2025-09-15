@@ -6,12 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crown ~ Crowned with Style.</title>
 
+    <!-- css files -->
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <!-- js files -->
     <script src="assets/js/script.js" defer></script>
+
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/ee0082ad61.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body id="home">
 
     <header>
         <div class="container">
@@ -28,11 +33,11 @@
 
             <nav class="nav-menu">
                 <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">services</a></li>
-                    <li><a href="">Gallery</a></li>
-                    <li><a href="">contact</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">contact</a></li>
                 </ul>
             </nav>
 
@@ -117,18 +122,85 @@
             </div>
 
             <a href="#gallery" class="scroll-to-gallery">
-            <span>scroll to gallery</span>
-            <div class="bounce"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" class="lucide lucide-arrow-down" aria-hidden="true">
-                <path d="M12 5v14"></path>
-                <path d="m19 12-7 7-7-7"></path>
-            </svg>
-        </div>
-        </a>
+                <span>scroll to gallery</span>
+                <div class="bounce"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="lucide lucide-arrow-down" aria-hidden="true">
+                        <path d="M12 5v14"></path>
+                        <path d="m19 12-7 7-7-7"></path>
+                    </svg>
+                </div>
+            </a>
         </section>
 
-        
+        <!-- about -->
+        <section class="about" id="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Meet Crown
+                        <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M372.2 116C372.2 136.9 359.8 155 342 163.2L448 256L552.4 235.1C547.1 227.4 544 218 544 208C544 181.5 565.5 160 592 160C618.5 160 640 181.5 640 208C640 234 619.4 255.1 593.6 256L481 506.3C470.7 529.3 447.8 544 422.6 544L217.4 544C192.2 544 169.4 529.2 159 506.3L46.4 256C20.6 255.1 0 234 0 208C0 181.5 21.5 160 48 160C74.5 160 96 181.5 96 208C96 218.1 92.9 227.4 87.6 235.1L192 256L298.1 163.1C280.4 154.8 268.1 136.8 268.1 116C268.1 87.3 291.4 64 320.1 64C348.8 64 372.1 87.3 372.1 116z"/></svg></span>
+                    </h2>
+                    <p>Beyond the camera</p>
+                </div>
+
+                <div class="about-row">
+                    <div class="about-col about-img">
+                        <img src="assets/imgs/12.jpg" alt="">
+                    </div>
+                    <div class="about-col about-text">
+                        <h2>About Me</h2>
+                        <p>I’ve always believed life is best lived in its rawest form unedited, authentic, and
+                            unapologetically real. That’s why I share my world through lifestyle vlogs, modeling, and
+                            casting, letting my audience see me exactly as I am. My content isn’t just about aesthetics;
+                            it’s about connection, freedom, and the art of living boldly.</p>
+                        <p>Beyond the camera, I’m deeply passionate about building, growing, and inspiring through
+                            digital opportunities. Affiliate marketing has become more than just a hustle for me it’s a
+                            way to show others that they can turn creativity, consistency, and digital skills into
+                            streams of income while doing what they love.
+                        </p>
+
+                        <p>This space is more than a website; it’s a reflection of my journey one filled with style,
+                            ambition, authenticity, and possibility. Whether you’re here for lifestyle inspiration,
+                            collaborations, or to learn how digital skills can change your life, you’re in the right
+                            place.
+                        </p>
+
+                        <p>Here’s to living beautifully, chasing dreams fearlessly, and cashing in while you slay. ✨</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- services -->
+        <section class="services" id="services">
+            <div class="container">
+                <div class="section-header">
+                    <h2>What I do</h2>
+                    <p>A quick peek through the stacks</p>
+                </div>
+                <div class="services-row">
+                    <div class="services-col">
+                        <h3>Raw realistic shows/videos.</h3>
+                    </div>
+                    <div class="services-col">
+                        <h3>Lifestyle content.</h3>
+                    </div>
+                    <div class="services-col">
+                        <h3>Vlogs.</h3>
+                    </div>
+                    <div class="services-col">
+                        <h3>Modelling.</h3>
+                    </div>
+                    <div class="services-col">
+                        <h3>Digital marketer.</h3>
+                    </div>
+                    <div class="services-col">
+                        <h3>CROWNSPACE.</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <footer></footer>
