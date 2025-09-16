@@ -1388,8 +1388,7 @@ footer {
     border-top: 1px solid var(--muted-color);
     padding: 5rem 0;
     text-align: center;
-    background: linear-gradient(135deg, #cfae70 0%, #ffb6b9 60%, #150b01 100%);
-    color: var(--crown-white);
+  background: linear-gradient(to bottom right,var(--tw-gradient-stops));
 }
 
 footer .section-header {
