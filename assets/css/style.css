@@ -1294,7 +1294,7 @@ header nav ul li a {
 }
 
 .form-row .input-group label {
-    font-size: var(--fs-subheading);
+    font-size: var(--fs-body);
     text-transform: capitalize;
     display: block;
     margin-bottom: 5px;
@@ -1322,7 +1322,6 @@ header nav ul li a {
     position: absolute;
     top: 12px;
     left: 10px;
-
 }
 
 .input-con.fullname::before {
@@ -1362,18 +1361,84 @@ header nav ul li a {
     border-color: var(--crown-gold);
 }
 
+@media (max-width: 900px) {
+    .form-row {
+        gap: 10px;
+    }
 
+    .contact-col:first-child img {
+    width: 90%;
+    border-radius: 10px;
+}
+}
+
+@media (max-width: 600px) {
+    .contact-row {
+        grid-template-columns: 1fr;
+    }
+
+    .mobile-form-group {
+        grid-column: span 2 / span 2;
+    }
+}
 /* contact end */
 
-/* social-icons */
-.social-icons {
-    width: 80px;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
+/* footer */
+footer {
+    border-top: 1px solid var(--muted-color);
+    padding: 5rem 0;
+    text-align: center;
+    background: linear-gradient(135deg, #cfae70 0%, #ffb6b9 60%, #150b01 100%);
+    color: var(--crown-white);
+}
+
+footer .section-header {
+    margin-bottom: 20px;
+}
+
+footer .section-header h2 {
+    position: relative;
+}
+
+footer .section-header h2 span {
+    position: absolute;
+    top: -20px;
+    left: 46%;
+}
+
+footer .section-header h2 span svg {
+    width: 20px;
+    height: auto;
+    fill: var(--crown-gold);
+}
+
+footer .social-text p {
+    margin-bottom: 1rem;
+}
+
+footer .social-text p svg {
+    fill: #ff0000;
+    stroke: #ff0000;
+}
+
+footer .social-text p a {
+    color: var(--crown-gold);
+}
+
+footer .social-text em {
+    font-style: normal;
+    font-size: var(--fs-small);
+}
+
+.social-icons-con {
     display: flex;
-    /* background-color: var(--crown-beige); */
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.social-icons {
+    display: flex;
     gap: 20px;
     justify-content: flex-end;
 }
@@ -1385,11 +1450,22 @@ header nav ul li a {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    bac
+    background-color: rgb(255, 255, 255, 0.5);
+    transition: 0.5s ease-in-out;
 }
 
 .social-icons a svg {
     width: 24px;
     height: 24px;
     fill: var(--crown-white);
+    transition: 0.5s ease-in-out;
+}
+
+.social-icons a:hover {
+    background-color: var(--crown-gold);
+    transform: translateY(-4px);
+}
+
+.social-icons a:hover svg {
+    fill: var(--crown-black);
 }
