@@ -50,19 +50,19 @@ setInterval(nextSlide, 5000);
 // image gallery
 const images = [
     { src: 'assets/imgs/1.jpg' },
-    { src: 'assets/imgs/3.jpg' },
     { src: 'assets/imgs/4.jpg' },
+    { src: 'assets/imgs/12.jpg' },
     { src: 'assets/imgs/5.jpg' },
-    { src: 'assets/imgs/6.jpg' },
     { src: 'assets/imgs/8.jpg' },
+    { src: 'assets/imgs/3.jpg' },
     { src: 'assets/imgs/9.jpg' },
     { src: 'assets/imgs/10.jpg' },
-    { src: 'assets/imgs/12.jpg' },
     { src: 'assets/imgs/13.jpg' },
+    { src: 'assets/imgs/6.jpg' },
     { src: 'assets/imgs/14.jpg' },
     { src: 'assets/imgs/15.jpg' },
     { src: 'assets/imgs/19.jpg' },
-    { src: 'assets/imgs/17.jpg' },
+    // { src: 'assets/imgs/17.jpg' },
 ];
 
 let currentImageIndex = 0;
